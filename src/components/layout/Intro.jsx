@@ -1,12 +1,12 @@
-import Button from "./Button";
+import Button from "../UI/Button";
 
-import WorkingImg from "../assets/images/illustration-working.svg";
+import WorkingImg from "../../assets/images/illustration-working.svg";
 
-const Presentation = () => {
+const Intro = () => {
   return (
-    <section className="presentation">
+    <section className="intro">
       <div className="introduction">
-        <div className="intro-text">
+        <div className="introduction__text">
           <h1>More than just shorter links</h1>
           <p>
             Build your brand&apos;s recognition and get detailed insights on how
@@ -18,10 +18,10 @@ const Presentation = () => {
         </div>
       </div>
       <div className="cover">
-        <img className="cover-img" src={WorkingImg} alt="working-image" />
+        <img className="cover-img" src={WorkingImg} alt="working person" />
       </div>
     </section>
   );
 };
 
-export default Presentation;
+export default Intro;

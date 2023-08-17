@@ -1,20 +1,20 @@
 import "./App.css";
 
-import Header from "./components/Header";
-import Presentation from "./components/Presentation";
-import Links from "./components/Links";
-import GetStarted from "./components/GetStarted";
-import Footer from "./components/Footer";
-import Attribution from "./components/Attribution";
+import Header from "./components/layout/Header";
+import Intro from "./components/layout/Intro";
+import Links from "./components/links/Links";
+import Banner from "./components/layout/Banner";
+import Footer from "./components/layout/Footer";
+import Attribution from "./components/layout/Attribution";
 
 function App() {
   return (
     <>
       <Header />
       <main>
-        <Presentation />
+        <Intro />
         <Links />
-        <GetStarted />
+        <Banner />
       </main>
       <Footer />
       <Attribution />

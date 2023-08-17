@@ -1,13 +1,13 @@
 import { useState } from "react";
-import Button from "./Button";
+import Button from "../UI/Button";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header>
-      <div className="logo-container">
-        <h2 className="logo">Shortly</h2>
+      <div className="logo">
+        <h2 className="logo--header">Shortly</h2>
       </div>
       <nav role="navigation">
         <div id="menuToggle">
@@ -16,36 +16,36 @@ const Header = () => {
               type="checkbox"
               onClick={() => setIsOpen((isOpen) => !isOpen)}
             />
-            <div className="hamburger-lines">
-              <span className="line line1"></span>
-              <span className="line line2"></span>
-              <span className="line line3"></span>
+            <div className="hamburger__lines">
+              <span className="hamburger__line line1"></span>
+              <span className="hamburger__line line2"></span>
+              <span className="hamburger__line line3"></span>
             </div>
           </div>
           <div id="menu" className={isOpen ? "expand" : null}>
-            <div className="details-menu">
-              <ul className="nav-links">
+            <div className="menu__content">
+              <ul className="nav__links">
                 <li>
-                  <a className="nav-link" href="#">
+                  <a className="nav__link" href="#">
                     Features
                   </a>
                 </li>
                 <li>
-                  <a className="nav-link" href="#">
+                  <a className="nav__link" href="#">
                     Pricing
                   </a>
                 </li>
                 <li>
-                  <a className="nav-link" href="#">
+                  <a className="nav__link" href="#">
                     Resources
                   </a>
                 </li>
               </ul>
             </div>
-            <div className="user-login-menu">
-              <ul className="nav-links">
+            <div className="menu-login__content">
+              <ul className="nav__links">
                 <li>
-                  <a className="nav-link" href="#">
+                  <a className="nav__link" href="#">
                     Login
                   </a>
                 </li>

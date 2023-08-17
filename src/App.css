@@ -23,12 +23,12 @@ h4 {
   color: hsl(255, 11%, 22%);
 }
 
-.logo-container,
-.nav-links {
+.header logo,
+.nav__links {
   display: flex;
 }
 
-.logo-container {
+.header logo {
   flex: 10%;
 }
 
@@ -55,31 +55,31 @@ nav {
   gap: 10%;
 }
 
-.nav-links {
+.nav__links {
   justify-content: flex-start;
   list-style: none;
   gap: 40px;
   align-items: center;
 }
 
-.nav-link {
+.nav__link {
   color: hsl(0, 0%, 75%);
   font-size: 18px;
   font-weight: 700;
   text-decoration: none;
 }
 
-.nav-link:hover {
+.nav__link:hover {
   color: hsl(260, 8%, 14%);
 }
 
-.user-login-menu {
+.menu-login__content {
   flex: 20%;
   display: flex;
   justify-content: flex-end;
 }
 
-.presentation {
+.intro {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   padding-left: 12vw;
@@ -89,14 +89,14 @@ nav {
   gap: 10%;
 }
 
-.introduction .intro-text h1 {
+.introduction .introduction__text h1 {
   color: hsl(260, 8%, 14%);
   letter-spacing: -3px;
   line-height: 1.2;
   font-weight: 700;
 }
 
-.introduction .intro-text p {
+.introduction .introduction__text p {
   font-size: 22px;
   color: hsl(0, 0%, 75%);
   padding-bottom: 20px;
@@ -115,17 +115,18 @@ nav {
   position: relative;
 }
 
-.url-shortening {
+.links__form {
   padding: 3% 3.5%;
   margin: 0 12%;
   background-image: url("./assets/images/bg-shorten-desktop.svg");
   background-color: hsl(257, 27%, 26%);
+  background-size: cover;
   border-radius: 10px;
   position: relative;
   top: 90px;
 }
 
-.url-shortening form {
+.links__form form {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -133,18 +134,18 @@ nav {
   gap: 5%;
 }
 
-.url-shortening div {
+.links__form div {
   flex: 75%;
 }
 
-.url-shortening p {
+.links__form p {
   color: hsl(0, 87%, 67%);
   font-style: italic;
   font-size: 15px;
   padding: 10px 0 0;
 }
 
-.url-shortening input {
+.links__form input {
   width: 100%;
   height: 50px;
   border: 0;
@@ -155,39 +156,39 @@ nav {
   outline: none;
 }
 
-.url-shortening .invalid input {
+.links__form .invalid input {
   border: 3px solid hsl(0, 87%, 67%);
   border-radius: 5px;
 }
 
-.url-shortening .invalid input:focus {
+.links__form .invalid input:focus {
   border: 3px solid hsl(0, 87%, 67%);
   border-radius: 5px;
 }
 
-.url-shortening .invalid input::placeholder {
+.links__form .invalid input::placeholder {
   color: hsl(0, 87%, 67%);
 }
 
-.url-shortening input:focus-visible {
+.links__form input:focus-visible {
   height: 50px;
   border: 0;
   border-radius: 5px;
 }
 
-.url-shortening button {
+.links__form button {
   flex: 20%;
 }
 
-.shorten-link {
+.shorten__links {
   min-height: 10vh;
 }
 
-.shorten-link ul {
+.shorten__links ul {
   list-style: none;
 }
 
-.shorten-link li {
+.shorten__links li {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -201,10 +202,14 @@ nav {
   word-wrap: break-word;
 }
 
-.shorten-link .urls {
+.shorten__links .shorten__link {
   display: flex;
   justify-content: space-between;
   flex: 85%;
+}
+
+.shorten__links p:nth-child(2) {
+  color: hsl(180, 66%, 49%);
 }
 
 .statistics {
@@ -213,16 +218,16 @@ nav {
   min-height: 80vh;
 }
 
-.statistics .intro-text {
+.statistics .statistics__text {
   text-align: center;
   margin-top: 100px;
 }
 
-.statistics .intro-text h2 {
+.statistics .introduction__text h2 {
   color: hsl(260, 8%, 14%);
 }
 
-.statistics .intro-text p {
+.statistics .statistics__text p {
   font-size: 17px;
   color: #9b9ba5;
   padding: 20px 22vw;
@@ -296,8 +301,9 @@ nav {
   z-index: 1;
 }
 
-.get-started {
+.banner {
   background-image: url("./assets/images/bg-boost-desktop.svg");
+  background-size: cover;
   background-color: hsl(257, 27%, 26%);
   display: flex;
   justify-content: center;
@@ -306,12 +312,12 @@ nav {
   position: relative;
 }
 
-.get-started div {
+.banner .banner__container {
   text-align: center;
   color: white;
 }
 
-.get-started h2 {
+.banner h2 {
   font-size: 30px;
   padding-bottom: 20px;
 }
@@ -330,7 +336,7 @@ nav {
   min-width: 122px;
 }
 
-.btn-rounded {
+.btn--rounded {
   border-radius: 30px;
 }
 
@@ -348,7 +354,7 @@ footer {
   justify-content: center;
 }
 
-footer .footer-column {
+footer .footer__column {
   flex: 2;
   display: flex;
   gap: 20px;
@@ -427,19 +433,19 @@ footer p {
     font-size: 72px;
   }
 
-  .introduction .intro-text p {
+  .introduction .introduction__text p {
     font-size: 18px;
   }
 
-  .presentation {
+  .intro {
     min-height: 55vh;
   }
 
-  .url-shortening form div {
+  .links__form form div {
     flex: 65%;
   }
 
-  .url-shortening {
+  .links__form {
     top: 65px;
   }
 
@@ -457,7 +463,7 @@ footer p {
     padding: 3% 12% 5%;
   }
 
-  .nav-link {
+  .nav__link {
     font-size: 16px;
   }
 
@@ -483,16 +489,16 @@ footer p {
     top: 50%;
   }
 
-  .shorten-link li {
+  .shorten__links li {
     flex-direction: column;
     align-items: unset;
   }
 
-  .shorten-link button {
+  .shorten__links button {
     align-self: center;
   }
 
-  .statistics .intro-text p {
+  .statistics .statistics__text p {
     padding: 20px 10vw;
   }
 }
@@ -530,7 +536,7 @@ footer p {
     -webkit-touch-callout: none;
   }
 
-  #hamburgerMenu .hamburger-lines {
+  #hamburgerMenu .hamburger__lines {
     height: 26px;
     width: 32px;
     z-index: 2;
@@ -539,7 +545,7 @@ footer p {
     justify-content: space-between;
   }
 
-  #hamburgerMenu .hamburger-lines .line {
+  #hamburgerMenu .hamburger__lines .hamburger__line {
     display: block;
     height: 3px;
     width: 100%;
@@ -547,16 +553,16 @@ footer p {
     background: hsl(0, 0%, 75%);
   }
 
-  #hamburgerMenu .hamburger-lines .line1 {
+  #hamburgerMenu .hamburger__lines .line1 {
     transform-origin: 0% 0%;
     transition: transform 0.4s ease-in-out;
   }
 
-  #hamburgerMenu .hamburger-lines .line2 {
+  #hamburgerMenu .hamburger__lines .line2 {
     transition: transform 0.2s ease-in-out;
   }
 
-  #hamburgerMenu .hamburger-lines .line3 {
+  #hamburgerMenu .hamburger__lines .line3 {
     transform-origin: 0% 100%;
     transition: transform 0.4s ease-in-out;
   }
@@ -565,15 +571,15 @@ footer p {
     transform: translateX(0);
   }
 
-  #hamburgerMenu input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  #hamburgerMenu input[type="checkbox"]:checked ~ .hamburger__lines .line1 {
     transform: rotate(45deg);
   }
 
-  #hamburgerMenu input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  #hamburgerMenu input[type="checkbox"]:checked ~ .hamburger__lines .line2 {
     transform: scaleY(0);
   }
 
-  #hamburgerMenu input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  #hamburgerMenu input[type="checkbox"]:checked ~ .hamburger__lines .line3 {
     transform: rotate(-45deg);
   }
 
@@ -581,27 +587,27 @@ footer p {
     display: grid;
   }
 
-  #menu .nav-links {
+  #menu .nav__links {
     display: grid;
     justify-content: center;
     gap: 30px;
   }
 
-  #menu .details-menu {
+  #menu .menu__content {
     border-bottom: 1px solid hsl(0, 0%, 75%);
     padding-bottom: 30px;
   }
 
-  #menu .user-login-menu {
+  #menu .menu-login__content {
     display: grid;
     justify-content: center;
   }
 
-  #menu .nav-links li {
+  #menu .nav__links li {
     text-align: center;
   }
 
-  #menu .nav-link {
+  #menu .nav__link {
     color: white;
   }
 
@@ -618,54 +624,54 @@ footer p {
     display: none;
   }
 
-  .presentation {
+  .intro {
     align-content: space-around;
   }
 
-  .url-shortening form {
+  .links__form form {
     flex-direction: column;
     align-items: unset;
     gap: 20px;
     padding: 10px;
   }
 
-  .url-shortening form div,
-  .url-shortening form button {
+  .links__form form div,
+  .links__form form button {
     flex: unset;
   }
 
-  .shorten-link li {
-    padding: 0 0 10px;
+  .shorten__links li {
+    padding: 0 0 20px;
   }
 
-  .shorten-link div {
+  .shorten__links div {
     flex-direction: column;
   }
 
-  .shorten-link p {
+  .shorten__links p {
     padding: 10px 30px;
   }
 
-  .shorten-link p:nth-child(1) {
+  .shorten__links p:nth-child(1) {
     border-bottom: 1px solid hsl(0, 0%, 75%);
   }
 
-  .shorten-link p:nth-child(2) {
+  .shorten__links p:nth-child(2) {
     padding-bottom: 0;
   }
 
-  .shorten-link button {
+  .shorten__links button {
     align-self: unset;
     margin: 0 30px;
   }
 
-  footer .footer-column {
+  footer .footer__column {
     flex-direction: column;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .presentation,
+  .intro,
   .cards {
     grid-template-columns: 1fr;
   }
@@ -686,7 +692,7 @@ footer p {
     margin-top: 5vh;
   }
 
-  .statistics .intro-text p {
+  .statistics .statistics__text p {
     padding: 20px 5vw;
   }
 
@@ -696,7 +702,12 @@ footer p {
 }
 
 @media screen and (max-width: 550px) {
-  #hamburgerMenu .hamburger-lines {
+  .logo--header {
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
+
+  #hamburgerMenu .hamburger__lines {
     height: 19px;
     width: 25px;
   }
@@ -710,16 +721,16 @@ footer p {
     letter-spacing: -2px;
   }
 
-  .introduction .intro-text h1 {
+  .introduction .introduction__text h1 {
     letter-spacing: -2px;
     padding-bottom: 20px;
   }
 
-  .introduction .intro-text p {
+  .introduction .introduction__text p {
     padding-bottom: 30px;
   }
 
-  .statistics .intro-text p {
+  .statistics .statistics__text p {
     font-size: 15px;
     padding-bottom: 50px;
   }
@@ -748,18 +759,26 @@ footer p {
     font-size: 32px;
   }
 
-  footer .footer-column {
+  footer .footer__column {
     width: 50%;
   }
 }
 
 @media screen and (max-width: 425px) {
   #hamburgerMenu {
-    top: 30px;
+    top: 35px;
   }
 
-  .get-started h2 {
+  .banner {
+    background-image: url("./assets/images/bg-boost-mobile.svg");
+  }
+
+  .banner h2 {
     font-size: 26px;
+  }
+
+  .links__form {
+    background-image: url("./assets/images/bg-shorten-mobile.svg");
   }
 }
 

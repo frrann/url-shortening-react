@@ -1,9 +1,9 @@
-import Button from "./Button";
+import Button from "../UI/Button";
 
-const GetStarted = () => {
+const Banner = () => {
   return (
-    <section className="get-started">
-      <div className="get-started-container">
+    <section className="banner">
+      <div className="banner__container">
         <h2>Boost your links today</h2>
         <Button rounded={true} fontSize="20px">
           Get Started
@@ -13,4 +13,4 @@ const GetStarted = () => {
   );
 };
 
-export default GetStarted;
+export default Banner;

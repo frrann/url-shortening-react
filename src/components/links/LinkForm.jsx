@@ -1,41 +1,32 @@
-import { useState } from "react";
-import Button from "./Button";
+import { useState, useRef } from "react";
 
-const isValidUrl = (urlString) => {
-  const urlPattern = new RegExp(
-    "^(https?:\\/\\/)?" + // validate protocol
-      "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // validate domain name
-      "((\\d{1,3}\\.){3}\\d{1,3}))" + // validate OR ip (v4) address
-      "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // validate port and path
-      "(\\?[;&a-z\\d%_.~+=-]*)?" + // validate query string
-      "(\\#[-a-z\\d_]*)?$",
-    "i"
-  ); // validate fragment locator
-  return !!urlPattern.test(urlString);
-};
+import Button from "../UI/Button";
+
+import { isValidUrl } from "../../helpers";
 
 // eslint-disable-next-line react/prop-types
 const LinkForm = ({ onSetLinks }) => {
   const [isValid, setIsValid] = useState(true);
   const [validationMsg, setValidationMsg] = useState("");
+  const linkInputRef = useRef();
 
-  const fetchURL = async (url) => {
+  const fetchLink = async (link) => {
     try {
       const response = await fetch(
-        `https://api.shrtco.de/v2/shorten?url=${url}`
+        `https://api.shrtco.de/v2/shorten?url=${link}`
       );
 
       if (!response.ok) throw new Error(`Couldn't get the short link.`);
 
       const data = await response.json();
 
-      const newUrl = {
+      const newLink = {
         id: data.result.code,
-        originalUrl: data.result.original_link,
-        shortUrl: data.result.full_short_link,
+        originalLink: data.result.original_link,
+        shortLink: data.result.full_short_link,
       };
 
-      onSetLinks((urls) => [...urls, newUrl]);
+      onSetLinks((links) => [...links, newLink]);
     } catch (error) {
       console.error(error);
     }
@@ -45,29 +36,35 @@ const LinkForm = ({ onSetLinks }) => {
     event.preventDefault();
     setValidationMsg("");
 
-    const url = event.target.url.value;
+    const link = linkInputRef.current.value;
 
-    if (!url) {
+    if (!link) {
       setIsValid(false);
       setValidationMsg("Please add a link");
       return;
     }
 
-    if (!isValidUrl(url)) {
+    if (!isValidUrl(link)) {
       setIsValid(false);
       setValidationMsg("Please add a valid link");
       return;
     }
 
-    fetchURL(url);
+    fetchLink(link);
     setIsValid(true);
+    linkInputRef.current.value = "";
   };
 
   return (
-    <div className="url-shortening">
+    <div className="links__form">
       <form onSubmit={handleFormSubmit} className={isValid ? null : "invalid"}>
         <div>
-          <input id="url" type="text" placeholder="Shorten a link here..." />
+          <input
+            id="url"
+            type="text"
+            placeholder="Shorten a link here..."
+            ref={linkInputRef}
+          />
           {!isValid && <p>{validationMsg}</p>}
         </div>
         <Button rounded={false}>Shorten it!</Button>

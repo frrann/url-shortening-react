@@ -9,7 +9,8 @@ const Attribution = () => {
       >
         Frontend Mentor
       </a>
-      . Coded by <a href="#">Fran M.</a>.
+      . Coded by{" "}
+      <a href="https://github.com/frrann/url-shortening-react">Fran M.</a>.
     </div>
   );
 };

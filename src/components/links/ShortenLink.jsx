@@ -1,21 +1,21 @@
 import { useState } from "react";
 
-import Button from "./Button";
+import Button from "../UI/Button";
 
 /* eslint-disable react/prop-types */
-const ShortenLink = ({ link: url }) => {
+const ShortenLink = ({ link }) => {
   const [isCopied, setIsCopied] = useState(false);
 
   const handleBtnClick = () => {
-    navigator.clipboard.writeText(url.shortUrl);
+    navigator.clipboard.writeText(link.shortLink);
     setIsCopied(true);
   };
 
   return (
-    <li className="link">
-      <div className="urls">
-        <p>{url.originalUrl}</p>
-        <p style={{ color: "hsl(180, 66%, 49%)" }}>{url.shortUrl}</p>
+    <li>
+      <div className="shorten__link">
+        <p>{link.originalLink}</p>
+        <p>{link.shortLink}</p>
       </div>
       <Button
         disabled={isCopied}

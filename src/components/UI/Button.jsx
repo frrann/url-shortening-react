@@ -8,7 +8,7 @@ const Button = ({
 }) => {
   return (
     <button
-      className={`btn ${rounded ? "btn-rounded" : null}`}
+      className={`btn ${rounded ? "btn--rounded" : null}`}
       disabled={disabled}
       onClick={onClick}
       style={{ fontSize: fontSize }}

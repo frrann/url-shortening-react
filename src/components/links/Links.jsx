@@ -2,16 +2,18 @@ import { useEffect, useState } from "react";
 
 import LinkForm from "./LinkForm";
 import ShortenLink from "./ShortenLink";
-import Statistics from "./Statistics";
+import Statistics from "../layout/Statistics";
+
+const initialLinks = () => {
+  let storedLinks = localStorage.getItem("links");
+  if (storedLinks !== null) {
+    return JSON.parse(storedLinks);
+  }
+  return [];
+};
 
 const Links = () => {
-  const [links, setLinks] = useState(() => {
-    let value = localStorage.getItem("links");
-    if (value !== null) {
-      return JSON.parse(value);
-    }
-    return [];
-  });
+  const [links, setLinks] = useState(initialLinks);
 
   useEffect(() => {
     localStorage.setItem("links", JSON.stringify(links));
@@ -22,10 +24,10 @@ const Links = () => {
       <LinkForm onSetLinks={setLinks} />
       <div className="statistics">
         {links.length !== 0 && (
-          <div className="shorten-link">
+          <div className="shorten__links">
             <ul>
-              {links.map((url) => (
-                <ShortenLink link={url} key={url.id} />
+              {links.map((link) => (
+                <ShortenLink link={link} key={link.id} />
               ))}
             </ul>
           </div>
