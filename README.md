@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution](https://your-solution-url.com)
-- [Live Site](frrann-url-shortening-app.netlify.app)
+- [Solution](https://www.frontendmentor.io/solutions/url-shortening-api-landing-page-using-react-LWagrRUfLL)
+- [Live Site](https://frrann-url-shortening-app.netlify.app/)
 
 ## My process
 
@@ -42,7 +42,7 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - [React](https://reactjs.org/) - JS library
-- [ViteJS] - Frontend build tool
+- [ViteJS](https://www.npmjs.com/package/vite) - Frontend build tool
 
 ## Author
 
