@@ -14,7 +14,7 @@ const ShortenLink = ({ link }) => {
   return (
     <li>
       <div className="shorten__link">
-        <p>{link.originalLink}</p>
+        <p style={{ overflowWrap: "anywhere" }}>{link.originalLink}</p>
         <p>{link.shortLink}</p>
       </div>
       <Button
