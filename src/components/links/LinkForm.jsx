@@ -13,17 +13,26 @@ const LinkForm = ({ onSetLinks }) => {
   const fetchLink = async (link) => {
     try {
       const response = await fetch(
-        `https://api.shrtco.de/v2/shorten?url=${link}`
+        `https://api.tinyurl.com/create?api_token=0vSAXYGvwK5BvfDNSNmGq9UzReqUsut9BZbyKE3VBilP38qIVY1n3Xi4g7ys`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            url: link,
+          }),
+        }
       );
 
       if (!response.ok) throw new Error(`Couldn't get the short link.`);
 
-      const data = await response.json();
+      const { data } = await response.json();
 
       const newLink = {
-        id: data.result.code,
-        originalLink: data.result.original_link,
-        shortLink: data.result.full_short_link,
+        id: data.alias,
+        originalLink: data.url,
+        shortLink: data.tiny_url,
       };
 
       onSetLinks((links) => [...links, newLink]);
